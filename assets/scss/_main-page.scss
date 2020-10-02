@@ -1,0 +1,25 @@
+.main-about,
+.about {
+  .show-more {
+    font-size: 16px;
+  }
+}
+
+.main-gallery {
+  padding-bottom: 0;
+
+  &__text {
+    @media screen and (min-width: 767px) {
+      width: 37vw;
+    }
+
+    @media screen and (min-width: 992px) {
+      position: relative;
+      width: 350px;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+}

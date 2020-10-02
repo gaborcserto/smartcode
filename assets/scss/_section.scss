@@ -1,0 +1,207 @@
+section {
+  @include transition(all 0.3s ease 0s);
+  padding: 40px 0 20px;
+  position: relative;
+
+  &.with-badge {
+    margin: 80px 0 0;
+  }
+
+  &:before {
+    top: 20px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 2px;
+    background-color: $basic-white;
+    left: 50%;
+    margin-left: -1px;
+    height: 100%;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .section {
+    float: left;
+
+    &--inverted {
+      float: right;
+
+      .section__panel {
+        margin-right: 40px;
+        margin-left: 0;
+
+        @media screen and (max-width: 991px) {
+          margin-left: inherit;
+          margin-right: inherit;
+        }
+      }
+    }
+
+    &-title {
+      h2 {
+        font-family: montserrat-black, sans-serif;
+        padding: 0 80px;
+        font-size: 32px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1199px) {
+          padding: 0 70px;
+        }
+
+        @media screen and (max-width: 991px) {
+          padding: 0 10px;
+        }
+      }
+    }
+
+    &-badge {
+      @include border-radius(50%);
+      color: $basic-white;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      font-size: 1.4em;
+      text-align: center;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      margin-left: -40px;
+      background-color: transparent;
+      z-index: 100;
+      border: 2px solid $basic-white;
+
+      img {
+        @include center-align-absolute;
+      }
+    }
+
+    &__panel {
+      padding: 20px;
+      margin-left: 40px;
+      margin-right: 0;
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      @media screen and (max-width: 991px) {
+        margin-left: inherit;
+        margin-right: inherit;
+        padding: 0;
+      }
+
+      &.img-only {
+        @include border-radius(5px);
+        @include box-shadow(0px 0px 38px 1px rgba(0,0,0,0.15));
+        overflow: hidden;
+
+        a {
+          display: block;
+          margin: -20px;
+          width: calc(100% + 40px);
+          cursor: pointer;
+        }
+        img {
+          width: 100%;
+        }
+      }
+
+      &.with-bg {
+        @include border-radius(5px);
+        @include box-shadow(0px 0px 38px 1px rgba(0,0,0,0.15));
+        background-color: $basic-white;
+        color: $basic-black;
+        overflow: hidden;
+
+        @media screen and (min-width: 768px) {
+          min-height: 296px;
+        }
+      }
+
+      &.with-img {
+        @include border-radius(5px);
+        @include box-shadow(0px 0px 38px 1px rgba(0,0,0,0.15));
+        //background: transparent url("../img/bg-panel_01.jpg") no-repeat top center;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        color: $basic-white;
+        overflow: hidden;
+        position: relative;
+        min-height: 296px;
+
+        .section__panel__body {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          @media screen and (min-width: 992px) {
+            width: calc(100% - 40px);
+          }
+        }
+      }
+
+      &__heading {
+        padding: 20px 10px 0;
+
+        @media screen and (min-width: 1200px) {
+          padding: 0 20px;
+        }
+
+        &__title {
+          text-transform: uppercase;
+        }
+      }
+
+      &__body {
+        font-family: roboto-regular, sans-serif;
+        position: relative;
+        padding: 20px 10px;
+        width: 100%;
+        display: block;
+
+        img {
+          max-width: 100%;
+        }
+
+        &__title-only {
+          text-transform: uppercase;
+          position: relative;
+          bottom: 0;
+          font-size: 35px;
+          font-weight: 900;
+
+          a {
+            color: $basic-white;
+            text-decoration: none;
+            display: block;
+          }
+
+          i {
+            float: right;
+          }
+
+        }
+
+        @media screen and (min-width: 1200px) {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .logos {
+    font-size: 60px;
+
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      font-size: 50px;
+
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+}

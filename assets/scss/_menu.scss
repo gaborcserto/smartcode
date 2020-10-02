@@ -1,0 +1,194 @@
+.navbar {
+  position: relative;
+
+  &.navbar-dark {
+    .navbar-toggler {
+      @include border-radius(0);
+      border: none;
+      padding: 0;
+      height: 30px;
+      width: 30px;
+      position: relative;
+      display: inline-block;
+      z-index: 1100;
+      right: 0;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+
+      &.menu-open {
+        @include transition(all 0.7s ease);
+        background: rgba(0, 0, 0, .3);
+        right: 250px;
+        position: fixed;
+
+        .navbar-toggler-icon {
+
+          .open-menu {
+            visibility: hidden;
+            opacity: 0;
+            font-size: 0;
+          }
+
+          .close-menu {
+            visibility: visible;
+            opacity: 1;
+            font-size: 28px;
+          }
+        }
+      }
+
+      &-icon {
+        @include center-align-absolute;
+        background-image: none;
+        color: $basic-white;
+        width: inherit;
+        height: inherit;
+
+        .open-menu {
+          visibility: visible;
+          opacity: 1;
+          font-size: 28px;
+        }
+
+        .close-menu {
+          visibility: hidden;
+          opacity: 0;
+          font-size: 0;
+        }
+      }
+    }
+
+  }
+  &-brand {
+    @media screen and (min-width: 1200px) {
+      margin-left: 90px;
+    }
+  }
+
+  .main-menu {
+    @include transition(all 0.7s ease);
+    @include box-shadow(0px 0px 20px 1px rgba(0, 0, 0, 0.25));
+    display: block;
+    position: fixed;
+    width: 250px;
+    right: -280px;
+    top: 0;
+    z-index: 1000;
+    background-color: $basic-white;
+    height: 100%;
+    padding-top: 60px;
+
+    &.menu-open {
+      @include transition(all 0.7s ease);
+      right: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+      @include box-shadow(0px 0px 0px 0px rgba(0, 0, 0, 0));
+      right: inherit;
+      top: inherit;
+      height: inherit;
+      padding-top: 0;
+      position: relative;
+      width: calc(100% - 60px);
+      margin-right: 60px;
+      background-color: transparent;
+    }
+
+    .nav-item {
+      position: relative;
+      text-transform: uppercase;
+
+      &:after {
+        content: "";
+        border-right: solid 1px $basic-white;
+        top: calc(50% - 7px);
+        left: 100%;
+        position: absolute;
+        height: 14px;
+
+        @media screen and (max-width: 991px) {
+          display: none;
+        }
+
+      }
+
+      &.active {
+        .nav-link {
+          line-height: 24px;
+
+          @media screen and (min-width: 992px) {
+            border-bottom: 1px solid $basic-white;
+            border-top: 1px solid $basic-white;
+          }
+
+          &:hover {
+            @media screen and (min-width: 992px) {
+              background-color: $basic-white;
+              color: $basic-green-1;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      .nav-link {
+        @include transition(all 0.7s ease);
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        padding: 0 10px;
+        color: $basic-green-1;
+        line-height: 24px;
+
+        @media screen and (min-width: 992px) {
+          color: $basic-white;
+        }
+
+        &:hover {
+          line-height: 24px;
+
+          @media screen and (min-width: 992px) {
+            border-bottom: 1px solid $basic-white;
+            border-top: 1px solid $basic-white;
+          }
+        }
+      }
+    }
+
+    &-icons {
+      display: inline-block;
+      width: 60px;
+      font-size: 22px;
+      position: absolute;
+      right: 60px;
+      text-align: center;
+
+      &__items {
+        display: block;
+        width: 30px;
+        height: 30px;
+        color: $basic-white;
+        float: right;
+        right: 0;
+        position: inherit;
+
+        &:hover {
+          color: $basic-white;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        right: 0;
+      }
+    }
+  }
+}

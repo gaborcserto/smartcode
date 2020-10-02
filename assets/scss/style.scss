@@ -1,0 +1,19 @@
+//vendor
+@import "../vendor/font-awesome/scss/font-awesome";
+
+//variables
+//fonts
+@import "font_roboto";
+@import "font_montserrat";
+
+@import "variables";
+@import "mixins";
+
+//modules
+@import "base";
+@import "menu";
+@import "carousel";
+@import "section";
+@import "main-page";
+@import "footer";
+@import "search";

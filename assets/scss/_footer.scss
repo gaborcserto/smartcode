@@ -1,0 +1,95 @@
+.footer {
+  font-family: robotolight, sans-serif;
+  text-align: center;
+  padding: 36px 0;
+
+  &__share {
+    font-family: montserrat-bold, sans-serif;
+
+    a {
+      color: $basic-white;
+      text-decoration: none;
+      font-size: 30px;
+      padding: 0 7px;
+    }
+  }
+
+  &__sign-up {
+    text-transform: uppercase;
+    line-height: 26px;
+    font-weight: bold;
+
+    &__button {
+      color: $basic-white !important;
+      text-decoration: none;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+
+      @media screen and (max-width: 575px) {
+        display: block;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    &__link {
+      background-color: $basic-white;
+      color: $basic-green-1 !important;
+      text-decoration: none;
+      padding: 0 56px;
+      margin-left: 15px;
+
+      @media screen and (max-width: 575px) {
+        display: block;
+        margin-left: 0;
+      }
+    }
+
+    &__form {
+      display: none;
+    }
+  }
+
+  &__menu {
+
+    &__item {
+      @include transition(all 0.7s ease);
+      position: relative;
+      padding: 0 10px;
+      color: $basic-white;
+      display: inline-block;
+
+      @media screen and (max-width: 575px) {
+        display: block;
+        border-bottom: solid 1px $basic-white;
+        text-align: left;
+      }
+
+      &:hover {
+        color: $basic-green-1;
+        background-color: $basic-white;
+      }
+
+      &:after {
+        content: "";
+        border-right: solid 1px $basic-white;
+        top: calc(50% - 7px);
+        left: 100%;
+        position: absolute;
+        height: 14px;
+
+        @media screen and (max-width: 575px) {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
